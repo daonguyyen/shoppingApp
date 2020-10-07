@@ -1,28 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  Button,
-} from 'react-native';
-
-import HomeScreen from './containers/HomeScreen'
-import ElectronicsScreen from './containers/ElectronicsScreen'
-import BooksScreen from './containers/BooksScreen'
-import ShoppingCartIcon from './containers/ShoppingCartIcon'
-
+import React from 'react';
+import { Provider } from 'react-redux';
+import ShoppingCart from './ShoppingCart';
+import store from './store';
 
 
 // const HomeScreen = ({navigation}) => {
@@ -65,25 +46,9 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerTitle: 'Shopping App',
-        headerStyle: {
-          backgroundColor: '#009387',
-        },
-        headerTintColor: '#ffffff',
-        headerTitleStyle: {
-          fontWeight: 'bold'
-        },
-        headerRight : () => (
-          <ShoppingCartIcon />
-        )
-      }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Electronics" component={ElectronicsScreen} />
-        <Stack.Screen name="Books" component={BooksScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <ShoppingCart />
+    </Provider>
   )
 }
 
