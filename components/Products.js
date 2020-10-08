@@ -7,8 +7,8 @@ class Products extends Component{
         return products.map((item, index) => {
             return (
                 <View key={index} style={{padding: 20}}>
-                    <Button onPress={(item) => this.props.onPress(item) }
-                        title={item.name + "_" + item.price}
+                    <Button onPress={() => this.props.onPress(item) }
+                        title={item.name + " - " + item.price}
                     ></Button>
                 </View>
             )  

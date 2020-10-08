@@ -12,7 +12,9 @@ const Stack = createStackNavigator();
 const ShoppingCart = () => {
     return (
           <NavigationContainer>
-          <Stack.Navigator screenOptions={{
+          <Stack.Navigator 
+            
+            screenOptions={({route, navigation}) => ({
             headerTitle: 'Shopping App',
             headerStyle: {
               backgroundColor: '#009387',
@@ -22,9 +24,9 @@ const ShoppingCart = () => {
               fontWeight: 'bold'
             },
             headerRight : () => (
-              <ShoppingCartIcon />
+              <ShoppingCartIcon navigation={navigation}/>
             )
-          }}>
+          })}>
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Electronics" component={ElectronicsScreen} />
             <Stack.Screen name="Books" component={BooksScreen} />

@@ -22,8 +22,8 @@ class ShoppingCartIcon extends Component {
                     width: 30,
                     borderRadius: 15,
                     backgroundColor: 'rgba(95,197,123,0.8)',
-                    right: 15,
-                    bottom: 15,
+                    right: 20,
+                    bottom: 20,
                     alignItems: 'center',
                     justifyContent: 'center',
                     zIndex: 2000
